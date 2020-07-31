@@ -1,0 +1,42 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+
+<h4>LIST OF EXISTING SERIES</h4>
+<ul class="list-group">
+    {{#each series}}
+    <li class="list-group-item">{{this.id}}){{this.name}}--S({{this.seasons}})--{{this.genre}}--{{this.year}}</li>
+    {{/each}}
+</ul>
+<p><a href="/api/series" class="btn btn-light mt-4">VIEW API</a></p>
+<p>
+<h4>ADD ITEM</h4>
+<form action="/api/series" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="name">Series' Name</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="seasons">Number of seasons</label>
+        <input type="number" name="seasons" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="year">Year of release</label>
+        <input type="number" name="year" class="form-control">
+    </div>
+    <input type="submit" value="Add Series" class="btn btn-primary btn-block">
+</form>
+</p>
+{{!-- <p>
+    <h4>DELETE ITEM</h4>
+    <form action="/api/series" method="GET" class="mb-4">
+    
+    <div class="form-group">
+        <label for="id">Series' id</label>
+        <input id="id" type="number" name="id" class="form-control">
+        
+    </div>
+    <input type="submit" value="Delete Series" class="btn btn-primary btn-block">
+</p> --}}
